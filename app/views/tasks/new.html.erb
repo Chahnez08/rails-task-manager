@@ -1,0 +1,14 @@
+<div class="text-center" style="width: 18rem;">
+  <h1 class="card-header text-secondary">Add a task : </h1>
+  <div class="mb-3 col-sm-2 col-form-label">
+    <%= form_with model: @task do |t| %>
+      <%= t.label :title, class: "fs-4 fw-bold text-warning" %>
+      <%= t.text_field :title %>
+      <%= t.label :details, class: "fs-4 fw-bold text-warning" %>
+      <%= t.text_field :details %>
+      <%= t.check_box :completed %>
+      <%= t.submit %>
+    <% end %>
+    </div>
+  <%= link_to "Back to list", tasks_path, class: "btn btn-primary fw-bold text-decoration-none text-light" %>
+</div>

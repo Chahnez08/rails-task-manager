@@ -1,0 +1,15 @@
+<div class="text-center" style="width: 18rem;">
+  <h1 class="card-header text-secondary">My tasks : </h1>
+    <ul class="list-group list-group-flush text-secondary">
+      <% @tasks.each do |task| %>
+        <li class="list-group-item">
+          <%= link_to task.title, task_path(task), class:"fs-4 fw-bold text-warning" %>
+          <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+<%= link_to "Add a new task", tasks_new_path, class: "btn btn-primary fw-bold text-decoration-none text-light" %>
+</div>
